@@ -32,7 +32,7 @@ async function installAdblock() {
         }
         const engineResult = engine.matchRequest(new tsUrlFilter.Request(url))
         if (engineResult && engineResult.basicRule) {
-            return new Response("Request blocked by anura AdBlock", {headers: [["Content-Type","text/plain"]]})
+            return new top.Response("Request blocked by anura AdBlock", {headers: [["Content-Type","text/plain"]]})
         }
 
         // or if you need to pass it back
