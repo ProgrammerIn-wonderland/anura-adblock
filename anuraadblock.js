@@ -43,7 +43,7 @@ async function installAdblock() {
         icon: "data:image/svg+xml;base64,BASE64ICON",
         tooltip: "Anura AdBlock Active"
     })
-    sysicon.onclick = (event) => {
+    const onclick = (event) => {
         const contextmenu = new anura.ContextMenu();
         contextmenu.addItem("Click to remove filter:", function () {    
         });
@@ -80,6 +80,7 @@ async function installAdblock() {
         contextmenu.show(event.pageX, event.pageY)
 
     }
+    sysicon.onclick = onclick;
     sysicon.onrightclick = onclick;
     anura.notifications.add({
         title: "Plugin Loaded",
